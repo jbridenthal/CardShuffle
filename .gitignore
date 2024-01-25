@@ -4,3 +4,11 @@ CardShuffle.Client/bin/*
 CardShuffle.Client/obj/*
 CardShuffle/bin/*
 CardShuffle/obj/*
+CardShuffle.Models/bin/*
+CardShuffle.Models/obj/*
+CardShuffle.Data/bin/*
+CardShuffle.Data/obj/*
+CardShuffle.Services/bin/*
+CardShuffle.Services/obj/*
+CardShuffle.WebHelper/bin/*
+CardShuffle.WebHelper/obj/*

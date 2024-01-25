@@ -13,4 +13,8 @@
     <PackageReference Include="Radzen.Blazor" Version="4.24.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CardShuffle.WebHelper\CardShuffle.WebHelper.csproj" />
+  </ItemGroup>
+
 </Project>

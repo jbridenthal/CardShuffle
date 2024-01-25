@@ -1,5 +1,6 @@
 using CardShuffle.Components;
 using Radzen;
+using CardShuffle.WebHelper;
 
 namespace CardShuffle
 {
@@ -14,6 +15,7 @@ namespace CardShuffle
                 .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
             builder.Services.AddRadzenComponents();
+            builder.Services.AddCardShuffleServices();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
