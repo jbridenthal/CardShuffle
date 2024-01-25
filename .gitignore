@@ -1,0 +1,6 @@
+
+.vs/*
+CardShuffle.Client/bin/*
+CardShuffle.Client/obj/*
+CardShuffle/bin/*
+CardShuffle/obj/*
