@@ -1,4 +1,5 @@
 using CardShuffle.Components;
+using Radzen;
 
 namespace CardShuffle
 {
@@ -12,7 +13,7 @@ namespace CardShuffle
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
-
+            builder.Services.AddRadzenComponents();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

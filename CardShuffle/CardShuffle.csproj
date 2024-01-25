@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CardShuffle.Client\CardShuffle.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.1" />
+    <PackageReference Include="Radzen.Blazor" Version="4.24.2" />
   </ItemGroup>
 
 </Project>
