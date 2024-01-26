@@ -1,9 +1,66 @@
-﻿@inherits LayoutComponentBase
+﻿
+@inherits LayoutComponentBase
 <RadzenComponents />
-@Body
+
+<RadzenLayout>
+    <RadzenHeader>
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
+            <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
+            <RadzenLabel Text="Header" />
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenSidebar Responsive="false" Style="width: max-content">
+        <RadzenPanelMenu DisplayStyle="@(sidebarExpanded ? MenuItemDisplayStyle.IconAndText : MenuItemDisplayStyle.Icon)" ShowArrow="false">
+@* 
+            <RadzenPanelMenuItem Text="Testing" Icon="meeting_room" Path="testing" />
+            <RadzenPanelMenuItem Text="Counter" Icon="home" Path="counter" /> *@
+            <RadzenPanelMenuItem Text="Admin" Icon="dashboard" path="administration" />
+@*             <RadzenPanelMenuItem Text="UI Fundamentals" Icon="account_circle">
+                <RadzenPanelMenuItem Text="Testing" Icon="meeting_room" Path="Home"/>
+                <RadzenPanelMenuItem Text="Colors" Icon="groups" />
+            </RadzenPanelMenuItem> *@
+        </RadzenPanelMenu>
+    </RadzenSidebar>
+    <RadzenBody>
+        <div class="rz-p-4">
+            @Body
+        </div>
+    </RadzenBody>
+
+    <RadzenFooter>
+        Footer
+    </RadzenFooter>
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+</RadzenLayout>
+
+
+@code {
+    bool sidebarExpanded = true;
+}
+
+@* <div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
 
 <div id="blazor-error-ui">
     An unhandled error has occurred.
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+ *@

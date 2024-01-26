@@ -1,0 +1,26 @@
+﻿@page "/administration"
+
+@using CardShuffle.Client.Pages.Administration.Components
+@using Radzen
+@using System.Text.Json
+
+<RadzenTabs @bind-SelectedIndex=@selectedIndex>
+    <Tabs>
+        <RadzenTabsItem Text="Teams">
+            <Teams></Teams>
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Future Use">
+            Future Use
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Future Use">
+            Future Use
+        </RadzenTabsItem>
+    </Tabs>
+</RadzenTabs>
+
+
+@code {
+
+
+    int selectedIndex = 0;
+}

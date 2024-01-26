@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34511.98
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardShuffle", "CardShuffle\CardShuffle.csproj", "{6251BDBA-A20E-4D49-8746-16DEA7358856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle", "CardShuffle\CardShuffle.csproj", "{6251BDBA-A20E-4D49-8746-16DEA7358856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardShuffle.Client", "CardShuffle.Client\CardShuffle.Client.csproj", "{9AA2FAD2-CB52-4648-BFA7-B50753993A9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle.Client", "CardShuffle.Client\CardShuffle.Client.csproj", "{9AA2FAD2-CB52-4648-BFA7-B50753993A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardShuffle.WebHelper", "CardShuffle.WebHelper\CardShuffle.WebHelper.csproj", "{6093E7EC-9BD0-4507-B8A8-038D7F456D14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle.WebHelper", "CardShuffle.WebHelper\CardShuffle.WebHelper.csproj", "{6093E7EC-9BD0-4507-B8A8-038D7F456D14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardShuffle.Services", "CardShuffle.Services\CardShuffle.Services.csproj", "{62B12DD5-94D5-4502-8E0E-130BA364B9E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle.Services", "CardShuffle.Services\CardShuffle.Services.csproj", "{62B12DD5-94D5-4502-8E0E-130BA364B9E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardShuffle.Data", "CardShuffle.Data\CardShuffle.Data.csproj", "{40931159-0ABE-4582-B74E-593519064122}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle.Data", "CardShuffle.Data\CardShuffle.Data.csproj", "{40931159-0ABE-4582-B74E-593519064122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardShuffle.Models", "CardShuffle.Models\CardShuffle.Models.csproj", "{72FDBE19-3D64-4E1F-B864-E6841A88A751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle.Models", "CardShuffle.Models\CardShuffle.Models.csproj", "{72FDBE19-3D64-4E1F-B864-E6841A88A751}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{A92A8780-0539-4A6C-A645-A47BCEFC8721}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{72FDBE19-3D64-4E1F-B864-E6841A88A751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72FDBE19-3D64-4E1F-B864-E6841A88A751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72FDBE19-3D64-4E1F-B864-E6841A88A751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

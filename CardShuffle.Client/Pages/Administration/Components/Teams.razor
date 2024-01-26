@@ -1,0 +1,111 @@
+﻿@using CardShuffle.Models;
+@using CardShuffle.Services
+@inject NavigationManager Navigator
+@inject TeamService _teamService;
+
+<style>
+    .rz-grid-table {
+        width: unset;
+    }
+</style>
+<RadzenButton ButtonStyle="ButtonStyle.Success" Icon="add_circle_outline" class="mt-2 mb-4 rz-m-3" Text="Add New team" Click="@InsertRow" Disabled=@(teamToInsert != null || teamToUpdate != null) />
+
+<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" Wrap="FlexWrap.NoWrap">
+<RadzenDataGrid @ref="teamsGrid" AllowAlternatingRows="false" AllowFiltering="true" AllowPaging="true" PageSize="50" AllowSorting="true" EditMode="DataGridEditMode.Single"
+                    Data="@teams" TItem="Team" ColumnWidth="200px" class=".rz-m-12"  Sort="@Reset" Page="@Reset" Filter="@Reset">
+    <Columns>
+        <RadzenDataGridColumn TItem="Team" Property="Name" Title="Team" Width="280px">
+            <EditTemplate Context="teamRow">
+                <RadzenTextBox @bind-Value="teamRow.Name" class="w-100" aria-label="Default TextBox" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="Team" Context="team" Filterable="false" Sortable="false" TextAlign="TextAlign.Right" Frozen="true" FrozenPosition="FrozenColumnPosition.Right">
+            <Template Context="teamRow">
+                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Light" Variant="Variant.Flat" Size="ButtonSize.Medium" Click="@(args => EditRow(teamRow))" @onclick:stopPropagation="true">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Variant="Variant.Flat" Shade="Shade.Lighter" Size="ButtonSize.Medium" class="my-1 ms-1" Click="@(args => DeleteRow(teamRow))" @onclick:stopPropagation="true">
+                </RadzenButton>
+            </Template>
+            <EditTemplate Context="teamRow">
+                <RadzenButton Icon="check" ButtonStyle="ButtonStyle.Success" Variant="Variant.Flat" Size="ButtonSize.Medium" Click="@((args) => SaveRow(teamRow))">
+                </RadzenButton>
+                <RadzenButton Icon="close" ButtonStyle="ButtonStyle.Light" Variant="Variant.Flat" Size="ButtonSize.Medium" class="my-1 ms-1" Click="@((args) => CancelEdit(teamRow))">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Variant="Variant.Flat" Shade="Shade.Lighter" Size="ButtonSize.Medium" class="my-1 ms-1" Click="@(args => DeleteRow(teamRow))">
+                </RadzenButton>
+            </EditTemplate>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
+</RadzenStack>
+
+@code {
+    RadzenDataGrid<Team> teamsGrid;
+    List<Team> teams = new List<Team> {
+     new Team { Name="Team 1"},
+     new Team {Name="Team 2"}
+    };
+
+    static HttpClient client = new HttpClient();
+    Team teamToInsert;
+    Team teamToUpdate;
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+    }
+    async Task InsertRow()
+    {
+        teamToInsert = new Team { Name=string.Empty};
+        await teamsGrid.InsertRow(teamToInsert);
+    }
+    void Reset()
+    {
+        teamToInsert = null;
+        teamToUpdate = null;
+    }
+    void CancelEdit(Team team)
+    {
+        Reset();
+
+        teamsGrid.CancelEditRow(team);
+    }
+    async Task SaveRow(Team team)
+    {
+        try {
+            
+            teams.Add(team);
+             HttpResponseMessage response = await client.PostAsJsonAsync(
+               $"{Navigator.BaseUri}api/Team/", team);
+             response.EnsureSuccessStatusCode();
+            await teamsGrid.UpdateRow(team);
+            Reset();
+        } catch( Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+    async Task EditRow(Team team)
+    {
+        teamToUpdate = team;
+        await teamsGrid.EditRow(team);
+    }
+
+    async Task DeleteRow(Team team)
+    {
+        Reset();
+
+        if (teams.Contains(team))
+        {
+            teams.Remove(team);
+            await teamsGrid.Reload();
+        }
+        else
+        {
+            teamsGrid.CancelEditRow(team);
+            await teamsGrid.Reload();
+        }
+
+    }
+
+}
