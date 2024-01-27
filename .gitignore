@@ -12,3 +12,4 @@ CardShuffle.Services/bin/*
 CardShuffle.Services/obj/*
 CardShuffle.WebHelper/bin/*
 CardShuffle.WebHelper/obj/*
+docker-compose.yml
