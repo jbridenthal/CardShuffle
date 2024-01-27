@@ -15,7 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle.Data", "CardShu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardShuffle.Models", "CardShuffle.Models\CardShuffle.Models.csproj", "{72FDBE19-3D64-4E1F-B864-E6841A88A751}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{A92A8780-0539-4A6C-A645-A47BCEFC8721}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F81C229A-B435-4BE4-B0B8-E40056C626EA}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +50,6 @@ Global
 		{72FDBE19-3D64-4E1F-B864-E6841A88A751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72FDBE19-3D64-4E1F-B864-E6841A88A751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72FDBE19-3D64-4E1F-B864-E6841A88A751}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A92A8780-0539-4A6C-A645-A47BCEFC8721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
