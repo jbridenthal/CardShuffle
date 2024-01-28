@@ -24,7 +24,6 @@
     <ProjectReference Include="..\CardShuffle.Data\CardShuffle.Data.csproj" />
     <ProjectReference Include="..\CardShuffle.Models\CardShuffle.Models.csproj" />
     <ProjectReference Include="..\CardShuffle.Services\CardShuffle.Services.csproj" />
-    <ProjectReference Include="..\CardShuffle.WebHelper\CardShuffle.WebHelper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
