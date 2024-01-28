@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Radzen;
-using CardShuffle.WebHelper;
 
 namespace CardShuffle.Client
 {
@@ -10,7 +9,6 @@ namespace CardShuffle.Client
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.Services.AddRadzenComponents();
-            builder.Services.AddCardShuffleServices();
             await builder.Build().RunAsync();
         }
     }
